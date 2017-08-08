@@ -28,7 +28,7 @@ WebBoard
 
 =head1 DESCRIPTION
 
-WebBoard - startap for Mojolicious routes
+WebBoard - startup for Mojolicious routes
 
 =head1 COPYRIGHT AND LICENSE
 
