@@ -30,7 +30,7 @@ CREATE TABLE `board_item` (
   `user_agent` varchar(255) NOT NULL,
   `user_url` varchar(255) NOT NULL,
   `user_country` varchar(8) NOT NULL,
-  `item_content` varchar(255) NOT NULL,
+  `item_content` varchar(1024) NOT NULL,
   `item_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8;
