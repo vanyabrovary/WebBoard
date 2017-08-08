@@ -45,6 +45,9 @@ Lib - access to some subroutines from TT
 =head1 SYNOPSIS
 
 [% lib.get_captcha_html %]
+[% lib.user_country %]
+[% lib.user_ip %]
+[% lib.user_agent %]
 
 =head1 COPYRIGHT AND LICENSE
 
