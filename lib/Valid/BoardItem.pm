@@ -15,12 +15,12 @@ sub valid() {
     foreach (qw/user_name user_email item_content captcha/) {
         my $str = $self->{arg}->{$_};
         if ( 'user_name' eq $_ ) {
-            unless ( $str =~ m/^[а-яa-z0-9_\-\.,;:\\\@\/#\$%\&\*\(\)\[\] ]{1,128}$/i ) {
+            unless ( $str =~ m/^[a-z0-9_\-\.,;:\\\@\/#\$%\&\*\(\)\[\] ]{1,128}$/i ) {
                 push @wrong, $_;
             }
         }
         if ( 'item_content' eq $_ ) {
-            unless ( $str =~ m/^[а-яa-z0-9_\-\.,;:\\\@\/#\$%\&\*\(\)\[\] ]{1,1024}$/i ) {
+            unless ( $str =~ m/^[a-z0-9_\-\.,;:\\\@\/#\$%\&\*\(\)\[\]'" ]{1,1024}$/i ) {
                 push @wrong, $_;
             }
         }
