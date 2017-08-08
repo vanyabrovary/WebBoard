@@ -4,7 +4,7 @@ use warnings;
 use strict;
 
 use Geo::IP;
-
+use Cfg;
 use reCAPTCHA qw/ GetCaptchaHtml /;
 
 sub new { bless( {}, shift ) }
@@ -14,7 +14,7 @@ sub get_captcha_html {
 }
 
 sub user_country {
-    my $gi = Geo::IP->open('/usr/share/GeoIP/GeoIP.dat') or return '';
+    my $gi = Geo::IP->open($cfg->{GEOIP}->{path}) or return '';
     return $gi->country_code_by_addr( $ENV{REMOTE_ADDR} );
 }
 

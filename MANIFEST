@@ -1,17 +1,17 @@
-etc/ 						config dir
-etc/my.ini 					application config file
-etc/conf/ 					apache, nginx configs and DB sql dump
-etc/conf/apache.itst.ssh.in.ua.conf 		apache config file
-etc/conf/nginx.itst.ssh.in.ua.conf 		nginx config file
-etc/conf/web_board.sql 			mysqldump
-log/ 						log files dir
-lib/						perl lib dir
+etc/ 						Config dir
+etc/my.ini 					Application config file
+etc/conf/ 					Apache, Nginx configs and DB sql dump
+etc/conf/apache.conf 				Apache config file
+etc/conf/nginx.conf 				Nginx config file
+etc/conf/web_board.sql 				mysqldump sql file
+log/ 						Log files dir
+lib/						Perl lib dir
 lib/WebBoard/					Mojolicious controllers dir
 lib/WebBoard/Controller/			Mojolicious controllers dir
-lib/WebBoard/Controller/BoardItem.pm            controller for /
-lib/WebBoard/Controller/RestBoardItem.pm      /board_item/list, /board_item/save controller
-lib/WebBoard.pm 				startap for Mojolicious routes
-html/ 						html dir
+lib/WebBoard/Controller/BoardItem.pm            Controller for /
+lib/WebBoard/Controller/RestBoardItem.pm        Controller for /board_item/list, /board_item/save
+lib/WebBoard.pm 				Start_app for Mojolicious routes
+html/ 						HTML dir
 html/tpl/					TT templates dir
-html/tpl/board_item.html  			/ template
-html/tpl/board_item_form.html 			form template	
+html/tpl/board_item.html  			Template for /
+html/tpl/board_item_form.html 			Template for form
