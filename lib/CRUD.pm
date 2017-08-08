@@ -45,7 +45,8 @@ sub list {
 
     require $use_class;
 
-    my $h = $db->prepare( "SELECT id FROM " . $class->db_table() . " WHERE " . ( $col || 'id' ) . " = ?" );
+    my $h =
+        $db->prepare( "SELECT id FROM " . $class->db_table() . " WHERE " . ( $col || 'id' ) . " = ?" );
     $h->execute( $val || 0 );
 
     my @b = ();
@@ -119,7 +120,12 @@ sub _fetch_from_db {
     my ( $cls, $col, $val ) = @_;
 
     my $h = $db->prepare(
-        'SELECT ' . join( ',', $cls->db_columns() ) . ' FROM ' . $cls->db_table() . ' WHERE ' . $col . ' = ? ' );
+        'SELECT '
+        . join( ',', $cls->db_columns() ) .
+        ' FROM '
+        . $cls->db_table().
+        ' WHERE '
+        . $col . ' = ? ' );
     $h->execute($val);
     my $obj = $h->fetchrow_hashref();
 
@@ -280,7 +286,9 @@ foreach ( @{ CRUD::Feed->list() } ){
 
 =head2 Read list where.
 
-print $_->{name}." ".$_->{size}." ".$_->{updated} foreach ( @{ CRUD::FeedFile->list_where( $arg->{feed_id}, 'feed_id' ) } )
+print $_->{name}." ".$_->{size}." ".$_->{updated}
+
+foreach ( @{ CRUD::FeedFile->list_where( $arg->{feed_id}, 'feed_id' ) } )
 
 =head2 Delete.
 
