@@ -1,0 +1,133 @@
+[Sat Aug  5 04:26:57 2017] [error] Global symbol "$self" requires explicit package name at /var/www/itst.ssh.in.ua/lib/Lib.pm line 15.
+BEGIN not safe after errors--compilation aborted at /var/www/itst.ssh.in.ua/lib/Lib.pm line 20.
+Compilation failed in require at /var/www/itst.ssh.in.ua/lib/Tpl.pm line 9.
+BEGIN failed--compilation aborted at /var/www/itst.ssh.in.ua/lib/Tpl.pm line 9.
+Compilation failed in require at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/BoardItem.pm line 8.
+BEGIN failed--compilation aborted at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/BoardItem.pm line 8.
+Compilation failed in require at (eval 101) line 1.
+
+[Sat Aug  5 04:29:56 2017] [error] Search pattern not terminated at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/RestBoardItem.pm line 116.
+Compilation failed in require at (eval 101) line 1.
+
+[Sat Aug  5 04:30:01 2017] [error] Search pattern not terminated at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/RestBoardItem.pm line 116.
+Compilation failed in require at (eval 101) line 1.
+
+[Sat Aug  5 04:30:11 2017] [error] Search pattern not terminated at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/RestBoardItem.pm line 116.
+Compilation failed in require at (eval 101) line 1.
+
+[Sat Aug  5 04:30:13 2017] [error] Search pattern not terminated at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/RestBoardItem.pm line 116.
+Compilation failed in require at (eval 101) line 1.
+
+[Sat Aug  5 04:30:14 2017] [error] Search pattern not terminated at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/RestBoardItem.pm line 116.
+Compilation failed in require at (eval 101) line 1.
+
+[Sat Aug  5 04:33:47 2017] [error] Unmatched right curly bracket at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/RestBoardItem.pm line 51, at end of line
+syntax error at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/RestBoardItem.pm line 51, near "}"
+Compilation failed in require at (eval 101) line 1, <DATA> line 717.
+
+[Sat Aug  5 04:34:15 2017] [error] Unmatched right curly bracket at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/RestBoardItem.pm line 51, at end of line
+syntax error at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/RestBoardItem.pm line 51, near "}"
+Compilation failed in require at (eval 101) line 1, <DATA> line 717.
+
+[Sat Aug  5 04:34:27 2017] [error] Unmatched right curly bracket at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/RestBoardItem.pm line 51, at end of line
+syntax error at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/RestBoardItem.pm line 51, near "}"
+Compilation failed in require at (eval 101) line 1, <DATA> line 717.
+
+[Sat Aug  5 04:36:33 2017] [error] Unmatched right curly bracket at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/RestBoardItem.pm line 51, at end of line
+syntax error at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/RestBoardItem.pm line 51, near "}"
+Compilation failed in require at (eval 101) line 1, <DATA> line 717.
+
+[Sat Aug  5 04:36:40 2017] [error] Attempt to reload WebBoard/Controller/RestBoardItem.pm aborted.
+Compilation failed in require at (eval 109) line 1.
+
+[Sat Aug  5 04:36:41 2017] [error] Unmatched right curly bracket at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/RestBoardItem.pm line 51, at end of line
+syntax error at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/RestBoardItem.pm line 51, near "}"
+Compilation failed in require at (eval 108) line 1.
+
+[Sat Aug  5 04:36:41 2017] [error] Unmatched right curly bracket at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/RestBoardItem.pm line 51, at end of line
+syntax error at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/RestBoardItem.pm line 51, near "}"
+Compilation failed in require at (eval 101) line 1, <DATA> line 717.
+
+[Sat Aug  5 04:36:42 2017] [error] Unmatched right curly bracket at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/RestBoardItem.pm line 51, at end of line
+syntax error at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/RestBoardItem.pm line 51, near "}"
+Compilation failed in require at (eval 101) line 1, <DATA> line 717.
+
+[Sat Aug  5 19:00:04 2017] [error] Undefined subroutine &WebBoard::Controller::RestBoardItem::Dumper called at /usr/local/share/perl/5.20.2/Mojolicious.pm line 138.
+
+[Sat Aug  5 19:00:23 2017] [error] Undefined subroutine &WebBoard::Controller::RestBoardItem::Dumper called at /usr/local/share/perl/5.20.2/Mojolicious.pm line 138.
+
+[Tue Aug  8 04:21:01 2017] [error] Can't locate Valid/Valid.pm in @INC (you may need to install the Valid::Valid module) (@INC contains: /var/www/itst.ssh.in.ua/lib /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.20.2 /usr/local/share/perl/5.20.2 /usr/lib/x86_64-linux-gnu/perl5/5.20 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.20 /usr/share/perl/5.20 /usr/local/lib/site_perl . /etc/apache2) at /var/www/itst.ssh.in.ua/lib/Valid.pm line 15, <DATA> line 717.
+
+[Tue Aug  8 04:21:44 2017] [error] Can't locate Valid/Valid.pm in @INC (you may need to install the Valid::Valid module) (@INC contains: /var/www/itst.ssh.in.ua/lib /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.20.2 /usr/local/share/perl/5.20.2 /usr/lib/x86_64-linux-gnu/perl5/5.20 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.20 /usr/share/perl/5.20 /usr/local/lib/site_perl . /etc/apache2) at /var/www/itst.ssh.in.ua/lib/Valid.pm line 15, <DATA> line 717.
+
+[Tue Aug  8 04:23:35 2017] [error] Valid/BoardItem.pm did not return a true value at /var/www/itst.ssh.in.ua/lib/Valid.pm line 16.
+
+[Tue Aug  8 04:23:36 2017] [error] Valid/BoardItem.pm did not return a true value at /var/www/itst.ssh.in.ua/lib/Valid.pm line 16.
+
+[Tue Aug  8 04:24:14 2017] [error] ARRAY(0x7f2d042901d8)
+[Tue Aug  8 04:24:18 2017] [error] ARRAY(0x7f2d042901d8)
+[Tue Aug  8 04:24:27 2017] [error] ARRAY(0x7f2d042901d8)
+[Tue Aug  8 04:24:48 2017] [error] ARRAY(0x7f2d07d98908)
+[Tue Aug  8 04:24:55 2017] [error] ARRAY(0x7f2d07d43148)
+[Tue Aug  8 04:29:33 2017] [error] ARRAY(0x7f2d0f284248)
+[Tue Aug  8 04:32:49 2017] [error] USER_NAME, USER_EMAIL, ITEM_CONTENT,  at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/RestBoardItem.pm line 26.
+
+[Tue Aug  8 04:35:35 2017] [error] USER_NAME, USER_EMAIL, ITEM_CONTENT,  at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/RestBoardItem.pm line 26.
+
+[Tue Aug  8 04:35:52 2017] [error] USER_NAME, USER_EMAIL, ITEM_CONTENT,  at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/RestBoardItem.pm line 26.
+
+[Tue Aug  8 04:37:20 2017] [error] syntax error at /var/www/itst.ssh.in.ua/lib/Valid/BoardItem.pm line 21, near "$_ ' ne '"
+Compilation failed in require at /var/www/itst.ssh.in.ua/lib/Valid.pm line 16.
+
+[Tue Aug  8 04:37:29 2017] [error] syntax error at /var/www/itst.ssh.in.ua/lib/Valid/BoardItem.pm line 21, near "$_ ' ne '"
+Compilation failed in require at /var/www/itst.ssh.in.ua/lib/Valid.pm line 16.
+
+[Tue Aug  8 04:37:40 2017] [error] syntax error at /var/www/itst.ssh.in.ua/lib/Valid/BoardItem.pm line 21, near "$_ ' ne '"
+Compilation failed in require at /var/www/itst.ssh.in.ua/lib/Valid.pm line 16.
+
+[Tue Aug  8 04:38:16 2017] [error] USER_NAME NE , USER_EMAIL NE , ITEM_CONTENT NE ,  at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/RestBoardItem.pm line 26.
+
+[Tue Aug  8 04:39:22 2017] [error] USER_NAME NE , USER_EMAIL NE , ITEM_CONTENT NE ,  at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/RestBoardItem.pm line 26.
+
+[Tue Aug  8 04:39:29 2017] [error] USER_NAME NE , USER_EMAIL NE , ITEM_CONTENT NE ,  at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/RestBoardItem.pm line 26.
+
+[Tue Aug  8 04:40:51 2017] [error] $VAR1 = {
+          'user_agent' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/59.0.3071.109 Chrome/59.0.3071.109 Safari/537.36',
+          'user_country' => 'UA',
+          'user_ip' => '95.134.104.178',
+          'user_name' => '9999777',
+          'item_content' => 'we24327777',
+          'user_email' => 'vanyabrovaru@gmail.com'
+        };
+USER_NAME NE , USER_EMAIL NE , ITEM_CONTENT NE ,  at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/RestBoardItem.pm line 26.
+
+[Tue Aug  8 04:42:45 2017] [error] syntax error at /var/www/itst.ssh.in.ua/lib/Valid/BoardItem.pm line 47, near ")
+		return"
+Compilation failed in require at /var/www/itst.ssh.in.ua/lib/Valid.pm line 16.
+
+[Tue Aug  8 04:42:45 2017] [error] syntax error at /var/www/itst.ssh.in.ua/lib/Valid/BoardItem.pm line 47, near ")
+		return"
+Compilation failed in require at /var/www/itst.ssh.in.ua/lib/Valid.pm line 16.
+
+[Tue Aug  8 04:43:17 2017] [error] USER_NAME NE , USER_EMAIL NE , ITEM_CONTENT NE , $VAR1 = {};
+ at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/RestBoardItem.pm line 26.
+
+[Tue Aug  8 04:50:27 2017] [error] USER_EMAIL NE 567567567, $VAR1 = {
+          'user_ip' => '95.134.104.178',
+          'user_name' => '657567567',
+          'user_agent' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/59.0.3071.109 Chrome/59.0.3071.109 Safari/537.36',
+          'user_email' => '567567567',
+          'user_country' => 'UA',
+          'item_content' => '657567567567'
+        };
+ at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/RestBoardItem.pm line 26.
+
+[Tue Aug  8 05:00:00 2017] [error] Global symbol "$invalid" requires explicit package name at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/RestBoardItem.pm line 25, <DATA> line 717.
+syntax error at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/RestBoardItem.pm line 25, near ") {"
+syntax error at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/RestBoardItem.pm line 29, near "} else"
+Global symbol "$self" requires explicit package name at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/RestBoardItem.pm line 30, <DATA> line 717.
+Global symbol "$invalid" requires explicit package name at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/RestBoardItem.pm line 30, <DATA> line 717.
+Global symbol "$self" requires explicit package name at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/RestBoardItem.pm line 36, <DATA> line 717.
+syntax error at /var/www/itst.ssh.in.ua/lib/WebBoard/Controller/RestBoardItem.pm line 48, near "}"
+Compilation failed in require at (eval 101) line 1, <DATA> line 717.
+

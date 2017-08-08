@@ -1,0 +1,200 @@
+<html>
+
+<head>
+		<title>⛮ WebBoard</title>
+		<link type="text/css" href="https://ssh.in.ua/jqw/jqx.base.css" rel="stylesheet" />
+		<link type="text/css" href="https://ssh.in.ua/jqw/styles/jqx.arctic.css" rel="stylesheet" />
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script>
+		// TABLE
+		var board_item_list = function() {
+				var DA = new $.jqx.dataAdapter({
+						url: '/board_item/list',
+						datatype: 'json',
+						datafields: [
+								{ name: 'id', type: 'int' },
+								{ name: 'user_name', type: 'string' },
+								{ name: 'user_email', type: 'string' },
+								{ name: 'user_url', type: 'string' },
+								{ name: 'item_content', type: 'string' },
+								{ name: 'item_created', type: 'string' },
+								{ name: 'user_agent', type: 'string' },
+								{ name: 'user_country', type: 'string' },
+								{ name: 'user_ip', type: 'string' }
+						]
+				});
+
+				$("#list").jqxGrid({
+						source: DA,
+						width: '100%',
+						height: '100%',
+						theme: 'arctic',
+						rowsheight: 28,
+						pagesizeoptions: ['[% cfg.grid_pagesize %]'],
+						pagesize: [% cfg.grid_pagesize %],
+						pageable: true,
+						sortable: true,
+						groupable: false,
+						filterable: true,
+						columnsresize: true,
+						columnsreorder: true,
+						showstatusbar: false,
+						showfilterrow: false,
+						columns: [
+								{ text: 'user_name', datafield: 'user_name', width: '15%', filtertype: 'textbox' },
+								{ text: 'item_content', datafield: 'item_content', width: '65%', filtertype: 'textbox' },
+								{ text: 'item_created', datafield: 'item_created', cellsalign: 'right', width: '15%', filtertype: 'textbox' },
+								{
+										text: 'info',
+										datafield: 'id',
+										width: '5%',
+										columntype: 'button',
+										cellsrenderer: function() { return " ❯ "; },
+										buttonclick: function(r) {
+												var l = $("#list").jqxGrid('getrowdata', r);
+												openPopupWindow(
+														'<br><b>id:</b> ' + l.id +
+														'<br><b>user_name:</b> ' + l.user_name +
+														'<br><b>user_email:</b> ' + l.user_email +
+														'<br><b>user_ip:</b> ' + l.user_ip +
+														'<br><b>user_agent:</b> ' + l.user_agent +
+														'<br><b>user_url:</b> ' + l.user_url +
+														'<br><b>user_country:</b> ' + l.user_country +
+														'<br><b>item_content:</b> ' + l.item_content +
+														'<br><b>item_created:</b> ' + l.item_created
+												);
+												return false;
+										}
+								},
+						]
+				});
+
+				// POPUP WINDOW
+				var openPopupWindow = function(data) {
+
+						$("popupWindow").html('');
+
+						$('#popupWindow').jqxWindow({
+								theme: theme,
+								resizable: true,
+								isModal: true,
+								modalOpacity: 0.3,
+								showCollapseButton: true,
+								width: 800,
+								height: 600,
+								position: 'top, center'
+
+						});
+						$('#popupWindow').jqxWindow('setTitle', '#');
+						$('#popupWindow').jqxWindow('setContent', data);
+
+						$("#popupWindow").jqxWindow('open');
+				}
+
+		}
+
+		// ON PAGE LOAD
+		$(document).ready(function() {
+				var response = new $.jqx.response();
+				var viewPort = response.viewPort;
+				var theme = $("#theme").val();
+
+				// SHOW TABLE
+				board_item_list();
+
+				// SPLITTER
+				$('#mainSplitter').jqxSplitter({
+						width: '99.9%',
+						height: viewPort.height - 2,
+						theme: theme,
+						orientation: 'vertical',
+						splitBarSize: 4,
+						showSplitBar: true,
+						panels: [
+								{ size: "21%" },
+								{ size: "79%" }
+						]
+				});
+
+				// FORM
+				$("#user_name").jqxInput({ width: '99%', height: '24', placeHolder: "Name", theme: theme });
+				$("#user_email").jqxInput({ width: '99%', height: '24', placeHolder: "Email", theme: theme });
+				$("#user_url").jqxInput({ width: '99%', height: '24', placeHolder: "Home page", theme: theme });
+				$("#item_content").jqxInput({ width: '99%', height: '24', placeHolder: "Message", theme: theme });
+				$("#send_btn").jqxButton({ width: '90', height: '28', theme: theme, template: "danger" });
+
+				// FORM validate
+				$("#send_btn").click(function() { $("#inForm").jqxValidator("validate"); });
+				$("#inForm").jqxValidator({
+						rules: [
+								{ input: "#user_email", message: "Required!", action: "keyup, blur", rule: function(input, commit) { return input.val() != ""; } },
+								{ input: "#user_name", message: "Required!", action: "keyup, blur", rule: function(input, commit) { return input.val() != ""; } },
+								{ input: "#item_content", message: "Required!", action: "keyup, blur", rule: function(input, commit) { return input.val() != ""; } }
+						],
+						hintType: 'label'
+				});
+
+				// FORM submit	
+				$('#inForm').on('validationSuccess', function(event) {
+						captcha_set();
+						$('#inForm').ajaxSubmit({ success: showResponse });
+						return false;
+				});
+		});
+
+		// SHOW RESPONSE
+		function showResponse(data) {
+				if (data != 'OK') {
+						alert('BAD FIELDS: ' + data);
+						captcha_reload();
+				} else {
+						captcha_reload();
+						form_reload();
+						board_item_list();
+				}
+		}
+
+		// CLEAN FORM FIELDS
+		function form_reload() {
+				$("#user_name").val('');
+				$("#user_email").val('');
+				$("#user_url").val('');
+				$("#item_content").val('');
+		}
+
+		// SET CAPTCHA FIELDS (ERROR WITH DEFAULT NAMES)
+		function captcha_set() {
+				$("#my_recaptcha_response_field").val($("#recaptcha_response_field").val());
+				$("#my_recaptcha_challenge_field").val($("#recaptcha_challenge_field").val());
+		}
+
+		// RELOAD CAPTCHA
+		function captcha_reload() {
+				$('#recaptcha_reload').click();
+				$("#my_recaptcha_response_field").val('');
+				$("#my_recaptcha_challenge_field").val('');
+		}
+		</script>
+</head>
+
+<body style="margin: 0px;">
+		<div id="mainSplitter">
+				<div id="cntt" width="100%">
+						<div id="tree">[% PROCESS board_item_form.html %]</div>
+				</div>
+				<div id="cnt" width="100%">
+						<div id="list"> </div>
+				</div>
+		</div>
+		<div style="display:none;">
+				<div id="popupWindow">
+						<div></div>
+						<div></div>
+				</div>
+		</div>
+		<input type="hidden" name="theme" id="theme" value="arctic">
+		<script type="text/javascript" src="https://ssh.in.ua/jqw/jqx-all.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.form/3.51/jquery.form.min.js"></script>
+</body>
+
+</html>

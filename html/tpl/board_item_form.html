@@ -1,0 +1,48 @@
+<div>
+		<table width="100%">
+				<form id="inForm" name="inForm" action="/board_item/save.html" method="post">
+						<tr>
+								<td>
+										<input id="user_name" name="user_name">
+								</td>
+						</tr>
+						<tr>
+								<td>
+										<input id="user_email" name="user_email">
+								</td>
+						</tr>
+						<tr>
+								<td>
+										<input id="user_url" name="user_url">
+								</td>
+						</tr>
+						<tr>
+								<td>
+										<input id="item_content" name="item_content">
+								</td>
+						</tr>
+						<tr>
+								<td>
+										[% lib.get_captcha_html %]
+										<input id="my_recaptcha_challenge_field" name="my_recaptcha_challenge_field" type="hidden" value="">
+										<input id="my_recaptcha_response_field" name="my_recaptcha_response_field" type="hidden" value="">
+								</td>
+						</tr>
+						<input id="user_agent" name="user_agent" type="hidden" value="[% lib.user_agent %]">
+						<input id="user_ip" name="user_ip" type="hidden" value="[% lib.user_ip %]">
+						<input id="user_country" name="user_country" type="hidden" value="[% lib.user_country %]">
+						<tr>
+								<td>
+										<input id="send_btn" type="button" value="➕ ADD">
+								</td>
+						</tr>
+						<tr>
+								<td>
+										<small style="color: gray;">
+												<em>[% lib.user_ip %] ([% lib.user_country %])</em>
+										</small>
+								</td>
+						</tr>
+				</form>
+		</table>
+</div>
