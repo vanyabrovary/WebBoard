@@ -35,7 +35,7 @@ sub board_item_save {
 
 =head1 NAME
 
-WebBoard::Controller::BoardItem
+WebBoard::Controller::RestBoardItem
 
 =head1 VERSION
 
