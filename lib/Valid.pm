@@ -3,8 +3,6 @@ package Valid;
 use warnings;
 use strict;
 
-use Carp;
-
 sub form {
     my $self = shift;
     my $name = shift;

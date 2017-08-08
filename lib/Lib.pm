@@ -3,6 +3,8 @@ package Lib;
 use warnings;
 use strict;
 
+use Geo::IP;
+
 use reCAPTCHA qw/ GetCaptchaHtml /;
 
 sub new { bless( {}, shift ) }
@@ -12,7 +14,6 @@ sub get_captcha_html {
 }
 
 sub user_country {
-    use Geo::IP;
     my $gi = Geo::IP->open('/usr/share/GeoIP/GeoIP.dat') or return '';
     return $gi->country_code_by_addr( $ENV{REMOTE_ADDR} );
 }
