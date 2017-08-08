@@ -50,6 +50,7 @@
 
 9. DBI,
 
-10. XSS (учтено для всех полей + HTML символы) my $safe = convert_XSS($stuff); # results in '&lt;script&gt;bad stuff&lt;/script&gt;'
+10. XSS (учтено для всех полей + HTML символы)
+my $safe = convert_XSS($stuff);
 
 =cut
