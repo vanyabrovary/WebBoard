@@ -46,8 +46,6 @@ Lib - access to some subroutines from TT
 
 [% lib.get_captcha_html %]
 
-print $cfg->{DB}->{n};
-
 =head1 COPYRIGHT AND LICENSE
 
 This is free software; you can redistribute it and/or modify
