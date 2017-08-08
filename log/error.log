@@ -1,2 +1,0 @@
-[Tue Aug 08 08:22:30.973110 2017] [perl:error] [pid 6891] [client 95.134.104.178:52151] Can't use string ("1") as a subroutine ref while "strict refs" in use at /usr/local/share/perl/5.20.2/Plack/Handler/Apache2.pm line 87.\n
-[Tue Aug 08 08:22:31.730043 2017] [perl:error] [pid 6892] [client 95.134.104.178:52152] Can't use string ("1") as a subroutine ref while "strict refs" in use at /usr/local/share/perl/5.20.2/Plack/Handler/Apache2.pm line 87.\n, referer: http://itst.ssh.in.ua/
