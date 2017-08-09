@@ -48,7 +48,7 @@ git clone https://github.com/vanyabrovary/WebBoard.git
 <pre>
 mysql -e 'CREATE DATABASE web_board /*!40100 DEFAULT CHARACTER SET utf8 */'
 mysql -e "GRANT ALL ON web_board.* TO 'web_board' IDENTIFIED BY 'web_board'"
-mysql shop < /var/www/WebBoard/etc/conf/web_board.sql
+mysql web_board < /var/www/WebBoard/etc/conf/web_board.sql
 </pre>
 
 #### Step 2.3. Configure apache.
