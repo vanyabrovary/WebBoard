@@ -9,7 +9,6 @@ use Tpl qw/get_tpl/;
 
 sub index {
     my $self = shift;
-
     $self->render( 'data' => get_tpl('board_item') );
 }
 

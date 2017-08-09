@@ -14,7 +14,7 @@ sub get_captcha_html {
 }
 
 sub user_country {
-    my $gi = Geo::IP->open($cfg->{GEOIP}->{path}) or return '';
+    my $gi = Geo::IP->open( $cfg->{GEOIP}->{path} ) or return '';
     return $gi->country_code_by_addr( $ENV{REMOTE_ADDR} );
 }
 

@@ -46,7 +46,7 @@ sub list {
     require $use_class;
 
     my $h =
-        $db->prepare( "SELECT id FROM " . $class->db_table() . " WHERE " . ( $col || 'id' ) . " = ?" );
+      $db->prepare( "SELECT id FROM " . $class->db_table() . " WHERE " . ( $col || 'id' ) . " = ?" );
     $h->execute( $val || 0 );
 
     my @b = ();
@@ -58,11 +58,16 @@ sub list {
     return \@b;
 }
 
-
 sub list_json {
     my ($class) = @_;
 
-    my $h = $db->prepare( "SELECT "  . join( ',', $class->db_columns() ) . " FROM " . $class->db_table()  . " ORDER BY "  . $class->db_order );
+    my $h =
+      $db->prepare( "SELECT "
+          . join( ',', $class->db_columns() )
+          . " FROM "
+          . $class->db_table()
+          . " ORDER BY "
+          . $class->db_order );
     $h->execute();
     my @b = ();
     while ( my $l = $h->fetchrow_hashref ) {
@@ -70,7 +75,8 @@ sub list_json {
     }
     if ( !$#b ) {
         return 0;
-    } else {
+    }
+    else {
         return \@b;
     }
 }
@@ -111,12 +117,7 @@ sub _fetch_from_db {
     my ( $cls, $col, $val ) = @_;
 
     my $h = $db->prepare(
-        'SELECT '
-        . join( ',', $cls->db_columns() ) .
-        ' FROM '
-        . $cls->db_table().
-        ' WHERE '
-        . $col . ' = ? ' );
+        'SELECT ' . join( ',', $cls->db_columns() ) . ' FROM ' . $cls->db_table() . ' WHERE ' . $col . ' = ? ' );
     $h->execute($val);
     my $obj = $h->fetchrow_hashref();
 

@@ -8,16 +8,12 @@ use Mojo::Base 'Mojolicious::Controller';
 use Tpl qw/get_tpl/;
 use CRUD::BoardItem;
 use Valid;
-use Data::Dumper;
 use JSON::Syck;
-
 
 sub board_item_list {
     my $self = shift;
-
     $JSON::Syck::ImplicitUnicode = 1;
-
-    $self->render( data => JSON::Syck::Dump( CRUD::BoardItem->list_json() )  );
+    $self->render( data => JSON::Syck::Dump( CRUD::BoardItem->list_json() ) );
 }
 
 sub board_item_save {
