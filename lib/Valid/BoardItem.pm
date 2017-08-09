@@ -14,25 +14,36 @@ sub valid() {
     my @wrong;
     foreach (qw/user_name user_email item_content captcha/) {
         my $str = $self->{arg}->{$_};
+
         if ( 'user_name' eq $_ ) {
-            unless ( $str =~ m/^[a-z0-9_\-\.,;:\\\@\/#\$%\&\*\(\)\[\] ]{1,128}$/i ) {
+
+            unless ( $str =~ m/^\w+$/i ) {
                 push @wrong, $_;
             }
+
         }
+
         if ( 'item_content' eq $_ ) {
+
             unless ( $str =~ m/^[a-z0-9_\-\.,;:\\\@\/#\$%\&\*\(\)\[\]'" ]{1,1024}$/i ) {
                 push @wrong, $_;
             }
+
         }
+
         if ( 'user_email' eq $_ ) {
+
             my $e;
             eval { $e = Email::Valid->address( -address => $str, -mxcheck => 1 ); };
             unless ($e) { push @wrong, $_; }
+
         }
         if ( 'captcha' eq $_ ) {
+
             unless ( CheckCaptcha( $self->{arg} ) ) {
                 push @wrong, $_;
             }
+
         }
     }
     return \@wrong;

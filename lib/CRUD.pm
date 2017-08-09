@@ -4,7 +4,7 @@ use warnings;
 use strict;
 
 use String::Clean::XSS;
-
+use JSON::XS;
 use DB;
 
 sub new {
@@ -58,28 +58,19 @@ sub list {
     return \@b;
 }
 
+
 sub list_json {
     my ($class) = @_;
 
-    my $h =
-      $db->prepare( "SELECT "
-          . join( ',', $class->db_columns() )
-          . " FROM "
-          . $class->db_table()
-          . " ORDER BY "
-          . $class->db_order );
+    my $h = $db->prepare( "SELECT "  . join( ',', $class->db_columns() ) . " FROM " . $class->db_table()  . " ORDER BY "  . $class->db_order );
     $h->execute();
-
     my @b = ();
-
     while ( my $l = $h->fetchrow_hashref ) {
         push @b, $l;
     }
-
     if ( !$#b ) {
         return 0;
-    }
-    else {
+    } else {
         return \@b;
     }
 }

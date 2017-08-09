@@ -1,7 +1,13 @@
 <html>
 
+
 <head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
 		<title>⛮ WebBoard</title>
+
 		<link type="text/css" href="https://ssh.in.ua/jqw/jqx.base.css" rel="stylesheet" />
 		<link type="text/css" href="https://ssh.in.ua/jqw/styles/jqx.arctic.css" rel="stylesheet" />
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -12,15 +18,15 @@
 						url: '/board_item/list',
 						datatype: 'json',
 						datafields: [
-								{ name: 'id', type: 'int' },
-								{ name: 'user_name', type: 'string' },
-								{ name: 'user_email', type: 'string' },
-								{ name: 'user_url', type: 'string' },
+								{ name: 'id', 		type: 'int' },
+								{ name: 'user_name', 	type: 'string' },
+								{ name: 'user_email', 	type: 'string' },
+								{ name: 'user_url', 	type: 'string' },
 								{ name: 'item_content', type: 'string' },
 								{ name: 'item_created', type: 'string' },
-								{ name: 'user_agent', type: 'string' },
+								{ name: 'user_agent', 	type: 'string' },
 								{ name: 'user_country', type: 'string' },
-								{ name: 'user_ip', type: 'string' }
+								{ name: 'user_ip', 	type: 'string' }
 						]
 				});
 
@@ -41,9 +47,10 @@
 						showstatusbar: false,
 						showfilterrow: false,
 						columns: [
-								{ text: 'user_name', datafield: 'user_name', width: '15%', filtertype: 'textbox' },
-								{ text: 'item_content', datafield: 'item_content', width: '65%', filtertype: 'textbox' },
-								{ text: 'item_created', datafield: 'item_created', cellsalign: 'right', width: '15%', filtertype: 'textbox' },
+								{ text: 'user_name', 	datafield: 'user_name',     width: '15%', filtertype: 'textbox' },
+								{ text: 'user_email', 	datafield: 'user_email',    width: '15%', filtertype: 'textbox' },
+								{ text: 'item_content', datafield: 'item_content',  width: '54%', filtertype: 'textbox' },
+								{ text: 'item_created', datafield: 'item_created',  width: '11%', filtertype: 'textbox', cellsalign: 'right' },
 								{
 										text: 'info',
 										datafield: 'id',
@@ -51,17 +58,21 @@
 										columntype: 'button',
 										cellsrenderer: function() { return " ❯ "; },
 										buttonclick: function(r) {
+
 												var l = $("#list").jqxGrid('getrowdata', r);
+
 												openPopupWindow(
-														'<br><b>id:</b> ' + l.id +
-														'<br><b>user_name:</b> ' + l.user_name +
-														'<br><b>user_email:</b> ' + l.user_email +
-														'<br><b>user_ip:</b> ' + l.user_ip +
-														'<br><b>user_agent:</b> ' + l.user_agent +
-														'<br><b>user_url:</b> ' + l.user_url +
-														'<br><b>user_country:</b> ' + l.user_country +
-														'<br><b>item_content:</b> ' + l.item_content +
-														'<br><b>item_created:</b> ' + l.item_created
+														'<table>'+
+														'<tr><td><b>id:           </b></td><td>' + l.id           + '</td></tr>'+
+														'<tr><td><b>user_name:    </b></td><td>' + l.user_name    + '</td></tr>'+
+														'<tr><td><b>user_email:   </b></td><td ' + l.user_email   + '</td></tr>'+
+														'<tr><td><b>user_ip:      </b></td><td>' + l.user_ip      + '</td></tr>'+
+														'<tr><td><b>user_agent:   </b></td><td>' + l.user_agent   + '</td></tr>'+
+														'<tr><td><b>user_url:     </b></td><td>' + l.user_url     + '</td></tr>'+
+														'<tr><td><b>user_country: </b></td><td>' + l.user_country + '</td></tr>'+
+														'<tr><td><b>item_content: </b></td><td>' + l.item_content + '</td></tr>'+
+														'<tr><td><b>item_created: </b></td><td>' + l.item_created + '</td></tr>'+
+														'</table>'
 												);
 												return false;
 										}
@@ -117,11 +128,11 @@
 				});
 
 				// FORM
-				$("#user_name").jqxInput({ width: '99%', height: '24', placeHolder: "Name", theme: theme });
-				$("#user_email").jqxInput({ width: '99%', height: '24', placeHolder: "Email", theme: theme });
-				$("#user_url").jqxInput({ width: '99%', height: '24', placeHolder: "Home page", theme: theme });
-				$("#item_content").jqxInput({ width: '99%', height: '24', placeHolder: "Message", theme: theme });
-				$("#send_btn").jqxButton({ width: '90', height: '28', theme: theme, template: "danger" });
+				$("#user_name").jqxInput({ width: '99%', height: '32', placeHolder: "Name", theme: theme });
+				$("#user_email").jqxInput({ width: '99%', height: '32', placeHolder: "Email", theme: theme });
+				$("#user_url").jqxInput({ width: '99%', height: '32', placeHolder: "Home page", theme: theme });
+				$("#item_content").jqxInput({ width: '99%', height: '32', placeHolder: "Message", theme: theme });
+				$("#send_btn").jqxButton({ width: '90', height: '34', theme: theme, template: "danger" });
 
 				// FORM validate
 				$("#send_btn").click(function() { $("#inForm").jqxValidator("validate"); });
